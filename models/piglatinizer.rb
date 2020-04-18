@@ -88,12 +88,11 @@ class PigLatinizer
   end
   
   def piglatinize(phrase)
+    splitted=phrase.split()
     arr=[]
-
-    phrase.split(" ").each do |word|
-      arr << to_pig_latin(word)
+    splitted.collect do |word|
+      arr<<pig_latinize(word)
     end 
-    
     arr.join(" ")
   end
   
