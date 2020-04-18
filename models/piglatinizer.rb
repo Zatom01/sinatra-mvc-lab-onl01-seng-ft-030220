@@ -43,23 +43,23 @@ class PigLatinizer
   # end
  
 
-  def to_pig_latin(word) #pig latinizes a single word
-    if word.downcase.index(/[aeiou]/) == 0
-      word.concat("way")
-    else
-      vowel_index = word.index(/[aeiou]/)
-      front_end = word.slice!(0..vowel_index-1)
-      word + front_end.concat("ay")
-    end
-  end
+  # def to_pig_latin(word) #pig latinizes a single word
+  #   if word.downcase.index(/[aeiou]/) == 0
+  #     word.concat("way")
+  #   else
+  #     vowel_index = word.index(/[aeiou]/)
+  #     front_end = word.slice!(0..vowel_index-1)
+  #     word + front_end.concat("ay")
+  #   end
+  # end
   
-  def piglatinize(phrase)
-    arr=[]
+  # def piglatinize(phrase)
+  #   arr=[]
 
-    phrase.split(" ").each do |word|
-      arr << to_pig_latin(word)
-    end 
+  #   phrase.split(" ").each do |word|
+  #     arr << to_pig_latin(word)
+  #   end 
     
-    arr.join(" ")
-  end
+  #   arr.join(" ")
+  # end
 end 
