@@ -64,13 +64,27 @@ class PigLatinizer
   # end
   
   def to_pig_latin(word) #pig latinizes a single word
-    if word.downcase.index(/[aeiou]/) == 0
-      word.concat("way")
-    else
-      vowel_index = word.index(/[aeiou]/)
-      front_end = word.slice!(0..vowel_index-1)
-      word + front_end.concat("ay")
-    end
+    vowels="aeiou"
+    consonents="bcdfghjklmnpqrstvwxyz"
+  
+    if vowels.include?(word[0].downcase)
+      word_latinized=word.concat("way")
+      word_latinized
+  
+    elsif consonents.include?(word[0].downcase) 
+      con=[]
+      s=word.split("")
+      flag=true
+      i=0
+      while flag 
+        con << s[i]
+        s.delete_at(i)
+        if s.empty? || !consonents.include?(s[i]) 
+          flag=false
+        end 
+      end 
+      s.join.concat(con.join).concat("ay")
+    end 
   end
   
   def piglatinize(phrase)
