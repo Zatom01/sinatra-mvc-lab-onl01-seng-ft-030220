@@ -91,7 +91,7 @@ class PigLatinizer
     splitted=phrase.split()
     arr=[]
     splitted.collect do |word|
-      arr<<pig_latinize(word)
+      arr << to_pig_latin(word)
     end 
     arr.join(" ")
   end
